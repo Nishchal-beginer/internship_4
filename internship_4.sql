@@ -1,0 +1,79 @@
+create database Company;
+
+use company;
+
+CREATE TABLE Employee (
+    Id INT PRIMARY KEY,
+    Name VARCHAR(20),
+    Department VARCHAR(10),
+    Salary INT
+);
+
+insert into employee
+(Id,Name,Department,Salary)
+Values
+(1,"Nishchal","MCA",25000),
+(2,"NIKITA","Btech",23000),
+(3,"PARAS","Mtech",24000),
+(4,"NIKI","BCA",25000),
+(5,"HIMANSHU","MCA",23000),
+(6,"HIMANI","BCA",25000),
+(7,"SHIVANI","Btech",22000),
+(8,"GOURI","Mtech",24000),
+(9,"NITISH","Btech",24000),
+(10,"PARSHANT","BBA",25000);
+
+SELECT 
+    *
+FROM
+    employee;
+
+SELECT 
+    MAX(salary), name
+FROM
+    employee;
+
+SELECT 
+    MIN(salary)
+FROM
+    employee;
+
+SELECT 
+    AVG(salary)
+FROM
+    employee;
+
+SELECT 
+    ROUND(AVG(salary), 2)
+FROM
+    employee;
+
+SELECT 
+    Name
+FROM
+    employee
+WHERE
+    Department = 'MCA';
+
+SELECT 
+    SUM(salary)
+FROM
+    employee
+WHERE
+    Id > 3;
+    
+SELECT 
+    Department, COUNT(name) as emplys
+FROM
+    employee
+GROUP BY Department;
+
+SELECT 
+    Name, department
+FROM
+    employee
+WHERE
+    salary > 24000;
+    
+
+ 
